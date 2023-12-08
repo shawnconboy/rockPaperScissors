@@ -9,6 +9,7 @@ function getComputerChoice() {
 
     return choices[randomIndex];
 }
+
 function playRound(computerSelection, playerChoice) {
     if (computerSelection === "rock") {
         if (playerChoice === "paper") {
@@ -36,3 +37,11 @@ function playRound(computerSelection, playerChoice) {
         }
     }
 }
+
+playerChoice = playerChoice.toLowerCase();
+
+const result = playRound(computerSelection, playerChoice);
+
+console.log(`Computer chose: ${computerSelection}`);
+console.log(`You chose: ${playerChoice}`);
+console.log(result);
