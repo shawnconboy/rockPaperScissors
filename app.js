@@ -54,6 +54,8 @@ function playRound() {
     let winner = determineWinner(userChoice, computerChoice);
 
     console.log('Result: ' + winner);
+
+    return winner;
 }
 
 function playGame() {
