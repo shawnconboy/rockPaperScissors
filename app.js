@@ -1,3 +1,13 @@
+let rockButton = document.getElementById("rockBtn");
+let paperButton = document.getElementById('paperBtn');
+let scissorsButton = document.getElementById('scissorsBtn');
+
+let playButton = document.getElementById('playBtn');
+let resetButton = document.getElementById('resetBtn');
+
+
+
+
 function getUserChoice() {
     return prompt("Rock Paper or Scissors?");
 }
@@ -89,4 +99,4 @@ function playGame() {
     }
 }
 
-playGame();
+// playGame();
