@@ -5,10 +5,11 @@ body {
     align-items: center;
     background-color: rgb(28, 38, 42);
     color: rgb(203, 203, 203);
+    height: 70vh;
 }
 
 .scoresView {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
 }
 
@@ -22,6 +23,7 @@ body {
 
 span {
     padding: 0px 10px;
+    font-size: 1.3rem;
 }
 
 button {
@@ -32,4 +34,29 @@ button {
     margin: 2px;
     cursor: pointer;
     color: rgb(197, 139, 197);
+    transition: 100ms;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+.selections {
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selections>button {
+    padding: 10px;
+    margin: 0px 18px;
+    width: 80px;
+}
+
+.controls>button {
+    padding: 10px;
+    margin: 0px 10px;
+    width: 70px;
+    margin-top: 30px;
 }
