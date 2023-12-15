@@ -1,7 +1,5 @@
 
-
-// Button declarations // **********************
-
+// Button declarations
 let rockButton = document.getElementById("rockBtn");
 let paperButton = document.getElementById('paperBtn');
 let scissorsButton = document.getElementById('scissorsBtn');
@@ -12,16 +10,8 @@ let resetButton = document.getElementById('resetBtn');
 let playerScoreDisplay = document.getElementById('playerScoreDisplay');
 let computerScoreDisplay = document.getElementById('computerScoreDisplay');
 
-
-
-
-
-
 let userWins = 0;
 let computerWins = 0;
-
-
-
 
 rockButton.addEventListener('click', function () {
     playRound('rock');
@@ -43,23 +33,30 @@ resetButton.addEventListener('click', function () {
     resetGame();
 });
 
-
-
-
-
-
-
-function playRound(userChoice) {
-    let computerChoice = getComputerChoice();
-    let winner = determineWinner(userChoice, computerChoice);
-
-    if (winner === 'User Wins') {
-        userWins++;
-    } else if (winner === 'Computer Wins') {
-        computerWins++;
+function playGame() {
+    while (userWins < 5 && computerWins < 5) {
+        playRound();
     }
 
-    updateScores();
+    if (userWins === 5 || computerWins === 5) {
+        alert(`${userWins === 5 ? 'Player' : 'Computer'} wins the game.`);
+        resetGame();
+    }
+}
+
+function playRound(userChoice) {
+    if (userWins < 5 && computerWins < 5) {
+        let computerChoice = getComputerChoice();
+        let winner = determineWinner(userChoice, computerChoice);
+
+        if (winner === 'User Wins') {
+            userWins++;
+        } else if (winner === 'Computer Wins') {
+            computerWins++;
+        }
+
+        updateScores();
+    }
 }
 
 function resetGame() {
