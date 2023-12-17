@@ -10,6 +10,8 @@ let resetButton = document.getElementById('resetBtn');
 let playerScoreDisplay = document.getElementById('playerScoreDisplay');
 let computerScoreDisplay = document.getElementById('computerScoreDisplay');
 
+let roundInfo = document.getElementById('info');
+
 let userWins = 0;
 let computerWins = 0;
 
@@ -32,6 +34,9 @@ playButton.addEventListener('click', function () {
 resetButton.addEventListener('click', function () {
     resetGame();
 });
+
+roundInfo.textContent = 'Press your choice to begin playing.'
+
 
 function playGame() {
     while (userWins < 5 && computerWins < 5) {
@@ -56,6 +61,8 @@ function playRound(userChoice) {
         }
 
         updateScores();
+
+        roundInfo.textContent = `You chose ${userChoice} and the computer chose ${computerChoice}. ${winner}`
     }
 }
 
@@ -63,6 +70,8 @@ function resetGame() {
     userWins = 0;
     computerWins = 0;
     updateScores();
+
+    roundInfo.textContent = 'Press your choice to begin playing.'
 }
 
 function updateScores() {
